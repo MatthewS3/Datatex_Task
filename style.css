@@ -4,49 +4,37 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    background: linear-gradient(135deg, #111018, #4e457e);
     margin: 0;
     overflow: hidden;
-    animation: backgroundAnim 15s infinite alternate ease-in-out;
-    transition: background 2s ease-in-out;
+    opacity: 0; 
+    animation: fadeIn 5s forwards; 
 }
-@keyframes backgroundAnim {
-    0% { background: linear-gradient(135deg, #9c8af8, #675f8d); }
-    25% { background: linear-gradient(135deg, #504269, #252663); }
-    50% { background: linear-gradient(135deg, #ffafbd, #ffc3a0); }
-    75% { background: linear-gradient(135deg, #43cea2, #185a9d); }
-    100% { background: linear-gradient(135deg, #1f1c2c, #928dab); }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
-.login-container {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-    text-align: center;
-    backdrop-filter: blur(15px);
-    animation: slideIn 1s ease-in-out;
-    position: relative;
-    max-width: 350px;
-    width: 100%;
+
+@keyframes fadeInInput {
+    from { opacity: 0; transform: translateX(-100px); }
+    to { opacity: 1; transform: translateX(0); }
 }
-@keyframes slideIn {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
+
+@keyframes fadeInButton {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
 }
-h2 {
-    color: white;
-    margin-bottom: 20px;
-    font-size: 28px;
-    font-weight: 600;
-}
+
 label {
     display: block;
     margin: 10px 0 5px;
     font-weight: bold;
     color: white;
 }
+
 input {
-    width: 100%;
+    width: 225px;
     padding: 12px;
     margin-bottom: 15px;
     border: none;
@@ -55,31 +43,38 @@ input {
     color: white;
     outline: none;
     font-size: 16px;
-    transition: 0.3s;
+    transition: 1s;
+    animation: fadeInInput 2s forwards; 
 }
+
 input::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
+
 input:focus {
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
+
 button {
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    background: linear-gradient(90deg, #ff8a00, #e52e37);
     color: white;
     border: none;
     padding: 14px 18px;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    width: 100%;
+    width: 250px;
     font-size: 18px;
     font-weight: bold;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 1s ease, box-shadow 0.5s ease;
+    animation: fadeInButton 2s forwards; 
 }
+
 button:hover {
     transform: scale(1.08);
     box-shadow: 0 0 20px rgba(255, 138, 0, 0.8);
 }
+
 button:active {
     transform: scale(1);
     box-shadow: 0 0 10px rgba(255, 138, 0, 0.6);
